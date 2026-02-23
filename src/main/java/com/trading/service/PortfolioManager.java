@@ -18,7 +18,7 @@ public class PortfolioManager {
                         acc -> new ConcurrentHashMap<>())
                 .computeIfAbsent(trade.getSymbol(),
                         sym -> new Position())
-                .applyTrade(trade.getSide(), trade.getQuantity());
+                .applyTrade(trade.getSide(), trade.getQuantity(), trade.getPrice());
     }
 
     public Map<Long, Map<String, Position>> getPortfolios() {
